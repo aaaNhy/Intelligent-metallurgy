@@ -5,7 +5,7 @@ from streamlit_pandas_profiling import st_profile_report
 
 st.header('`streamlit_pandas_profiling`')
 
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+df = pd.read_excel('https://github.com/aaaNhy/Intelligent-metallurgy/testB_2022-09-19.xlsx')
 
 pr = df.profile_report()
 st_profile_report(pr)
