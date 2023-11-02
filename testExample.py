@@ -21,7 +21,7 @@ df = pd.DataFrame({
 st.write("冶金工人工资详情：", df)
 
 st.header('让我们画个折线图来看清楚冶金工人的身高体重年龄')
-chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80], '年龄': [10, 12, 14, 16, 18]}
+chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80]}
 
 # chart_data = pd.DataFrame(
 #      np.random.randn(20, 3),
