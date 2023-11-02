@@ -33,11 +33,12 @@ st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,�
 option = st.selectbox(
      '在以下选项中选择，你最喜欢的工服是？',
      ('长袖', '短袖', '背心'))
-# options = st.multiselect(
-#      '你最喜欢的套餐是？每份20元',
-#      ['白萝卜干', '红萝卜干', '小白菜', '大青菜'],
-#      ['米饭', '面条'])
-# st.write('你选择:', option, '作为工服', options, '作为工作餐')
+
+options = st.multiselect(
+     'What are your favorite colors',
+     ['Green', 'Yellow', 'Red', 'Blue'],
+     ['Yellow', 'Red'])
+st.write('你选择:', option, '作为工服', options, '作为工作餐')
 
 
 df2 = pd.DataFrame(
