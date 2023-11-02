@@ -29,33 +29,6 @@ chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70
 
 st.line_chart(chart_data)
 
-st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,还可以选择衣服的颜色')
-option = st.selectbox(
-     '在以下选项中选择，你最喜欢的工服是？',
-     ('长袖', '短袖', '背心'))
-
-options = st.multiselect(
-     '你最喜欢的工服颜色是（默认黄色）',
-     ['Green', 'Yellow', 'Red', 'Blue'],
-     ['Yellow'])
-st.write('你选择:', option, '作为工服,颜色是', options )
-
-st.write ('选择你的工作零食?')
-
-icecream = st.checkbox('Ice cream')
-coffee = st.checkbox('Coffee')
-cola = st.checkbox('Cola')
-
-if icecream:
-     st.write("Great! 你点的 🍦")
-
-if coffee:
-     st.write("Okay, 你要的咖啡 ☕")
-
-if cola:
-     st.write("喝点可乐 🥤")
-
-
 df2 = pd.DataFrame(
     np.random.randn(80, 3),
     columns=['a', 'b', 'c'])
@@ -91,7 +64,6 @@ start_time = st.slider(
      format="MM/DD/YY - hh:mm")
 st.write("你的开始时间是:", start_time)
 
-
 st.header('你喜欢的怎么去上班')
 
 option = st.selectbox(
@@ -99,4 +71,32 @@ option = st.selectbox(
      ('走去', '公交车', '地铁', '打车'))
 
 st.write('原来你喜欢用： ', option, '这种方式去上班')
+
+st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,还可以选择衣服的颜色')
+option = st.selectbox(
+     '在以下选项中选择，你最喜欢的工服是？',
+     ('长袖', '短袖', '背心'))
+
+options = st.multiselect(
+     '你最喜欢的工服颜色是（默认黄色）',
+     ['Green', 'Yellow', 'Red', 'Blue'],
+     ['Yellow'])
+st.write('你选择:', option, '作为工服,颜色是', options )
+
+st.write ('选择你的工作零食?')
+
+icecream = st.checkbox('Ice cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if icecream:
+     st.write("Great! 你点的 🍦")
+
+if coffee:
+     st.write("Okay, 你要的咖啡 ☕")
+
+if cola:
+     st.write("喝点可乐 🥤")
+
+st.write ('你的大概情况我们已经了解了，后续等通知吧')
 
