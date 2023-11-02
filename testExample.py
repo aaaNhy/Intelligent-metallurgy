@@ -40,6 +40,21 @@ options = st.multiselect(
      ['Yellow'])
 st.write('你选择:', option, '作为工服,颜色是', options )
 
+st.write ('选择你的工作零食?')
+
+icecream = st.checkbox('Ice cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if icecream:
+     st.write("Great! 你点的 🍦")
+
+if coffee:
+     st.write("Okay, 你要的咖啡 ☕")
+
+if cola:
+     st.write("喝点可乐 🥤")
+
 
 df2 = pd.DataFrame(
     np.random.randn(80, 3),
