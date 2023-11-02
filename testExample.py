@@ -9,16 +9,37 @@ st.header('自己做的页面')
 if st.button('说说你的梦想'):
      st.write('我要冶金')
 else:
-     st.write('最大的梦想')
+     st.write('最大的梦想是什么')
 
 st.write("下面看看冶金工作的具体情况")
 
-
 df = pd.DataFrame({
-    '身高cm': [160, 170, 180, 190],
-    '体重kg': [60, 70, 80, 90]
+    '工时h': [150, 170, 180, 190],
+    '工资￥': [2600, 3000, 4000, 6000]
 })
-st.write("冶金工人的身高体重：", df)
+
+st.write("冶金工人工资详情：", df)
+
+st.header('让我们画个折线图来看清楚冶金工人的身高体重年龄')
+chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80], '年龄': [10, 12, 14, 16, 18]}
+
+# chart_data = pd.DataFrame(
+#      np.random.randn(20, 3),
+#      columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
+
+st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,还可以选择喜欢吃的套餐')
+option = st.selectbox(
+     '在以下选项中选择，你最喜欢的工服是？',
+     ('长袖', '短袖', '背心'))
+options = st.multiselect(
+     '你最喜欢的套餐是？每份20元',
+     ['白萝卜干', '红萝卜干', '小白菜', '大青菜'],
+     ['米饭', '面条'])
+st.write('你选择:', option, '作为工服', options, '作为工作餐')
+
+st.write('You selected:', options)
 
 
 df2 = pd.DataFrame(
@@ -26,7 +47,7 @@ df2 = pd.DataFrame(
     columns=['a', 'b', 'c'])
 c = alt.Chart(df2).mark_circle().encode(
     x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-st.write("冶金工人会画图：", c)
+st.write("冶金工人随便画的图：", c)
 
 
 st.write("说出你的详细信息，我们来看看录不录用你：")
@@ -41,30 +62,20 @@ values = st.slider(
      18.0, 60.0, (25.0, 50.0))
 st.write('你选的工作年限是:', values)
 
-st.subheader('你的工作时间是？：')
+st.subheader('你选择的工作时间是？：')
 
 appointment = st.slider(
      "你的时间表:",
      value=(time(6, 00), time(23, 59)))
 st.write("你自愿的工作时间表是:", appointment)
 
-st.subheader('你每年打算从什么时候干到年尾')
+st.subheader('你每年打算从什么时候开始干到年尾')
 
 start_time = st.slider(
      "做出你的打算?",
      value=datetime(2023, 1, 1, 6, 30),
      format="MM/DD/YY - hh:mm")
 st.write("你的开始时间是:", start_time)
-
-st.header('让我们来看看冶金工人的身高体重年龄')
-chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80], '年龄': [10, 12, 14, 16, 18]}
-# df = pd.DataFrame(chart_data)
-
-# chart_data = pd.DataFrame(
-#      np.random.randn(20, 3),
-#      columns=['a', 'b', 'c'])
-
-st.line_chart(chart_data)
 
 
 st.header('你喜欢的怎么去上班')
