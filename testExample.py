@@ -50,11 +50,6 @@ st.write('Values:', values)
 
 st.subheader('时间范围滑动条：')
 
-appointment = st.slider(
-     "Schedule your appointment:",
-     value=(time(11, 30), time(12, 45)))
-st.write("You're scheduled for:", appointment)
-
 
 st.subheader('日期滑动条')
 
