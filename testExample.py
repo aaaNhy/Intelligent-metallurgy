@@ -29,16 +29,16 @@ chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70
 
 st.line_chart(chart_data)
 
-st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,还可以选择喜欢吃的套餐')
+st.header('在我们公司冶金工人不仅可以选择自己喜欢的衣服,还可以选择衣服的颜色')
 option = st.selectbox(
      '在以下选项中选择，你最喜欢的工服是？',
      ('长袖', '短袖', '背心'))
 
 options = st.multiselect(
-     '选择你的工作餐',
-     ['白菜', '青菜', '萝卜干', '蒜头'],
-     ['米饭', '面条'])
-st.write('你选择:', option, '作为工服', options, '作为工作餐')
+     '你最喜欢的工服颜色是（默认黄色）',
+     ['Green', 'Yellow', 'Red', 'Blue'],
+     ['Yellow'])
+st.write('你选择:', option, '作为工服,颜色是', options )
 
 
 df2 = pd.DataFrame(
