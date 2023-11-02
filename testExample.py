@@ -37,9 +37,7 @@ options = st.multiselect(
      '你最喜欢的套餐是？每份20元',
      ['白萝卜干', '红萝卜干', '小白菜', '大青菜'],
      ['米饭', '面条'])
-st.write('你选择:', option, '作为工服', options, '作为工作餐')
-
-st.write('You selected:', options)
+# st.write('你选择:', option, '作为工服', options, '作为工作餐')
 
 
 df2 = pd.DataFrame(
