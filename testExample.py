@@ -35,9 +35,9 @@ option = st.selectbox(
      ('长袖', '短袖', '背心'))
 
 options = st.multiselect(
-     'What are your favorite colors',
-     ['Green', 'Yellow', 'Red', 'Blue'],
-     ['Yellow', 'Red'])
+     '选择你的工作餐',
+     ['白菜', '青菜', '萝卜干', '蒜头'],
+     ['米饭', '面条'])
 st.write('你选择:', option, '作为工服', options, '作为工作餐')
 
 
