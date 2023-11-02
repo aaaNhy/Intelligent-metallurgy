@@ -62,3 +62,13 @@ start_time = st.slider(
      format="MM/DD/YY - hh:mm")
 st.write("开始时间:", start_time)
 
+st.header('画一个折线图')
+chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80], '年龄': [10, 12, 14, 16, 18]}
+df = pd.DataFrame(chart_data)
+
+# chart_data = pd.DataFrame(
+#      np.random.randn(20, 3),
+#      columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
+
