@@ -6,65 +6,59 @@ from datetime import time, datetime
 
 st.header('自己做的页面')
 
-st.write('自己做的页面')
-
-if st.button('你要做页面吗'):
-     st.write('你猜猜对了')
+if st.button('说说你的梦想'):
+     st.write('我要冶金')
 else:
-     st.write('是的')
+     st.write('最大的梦想')
 
-
-st.write('这是输出语句，可以输出各种各样的数据')
-
-
-st.write("int:", 1234)
+st.write("下面看看冶金工作的具体情况")
 
 
 df = pd.DataFrame({
     '身高cm': [160, 170, 180, 190],
-    '体重kg': [50, 60, 70, 80]
+    '体重kg': [60, 70, 80, 90]
 })
-st.write(df)
+st.write("冶金工人的身高体重：", df)
 
 
 df2 = pd.DataFrame(
-    np.random.randn(400, 3),
+    np.random.randn(80, 3),
     columns=['a', 'b', 'c'])
 c = alt.Chart(df2).mark_circle().encode(
     x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-st.write("图表：", c)
+st.write("冶金工人会画图：", c)
 
 
-st.write("接着让我们再制作些滑条输入组件：")
+st.write("说出你的详细信息，我们来看看录不录用你：")
 
-age = st.slider('请输入你的年龄?', 0, 130, 25)
+age = st.slider('你的年龄是?', 0, 130, 25)
 st.write("我", age, '岁了')
 
-st.subheader('滑动范围')
+st.subheader('选择你的工作年限')
 
 values = st.slider(
-     '选择一个区间（默认100-800）',
-     0.0, 1000.0, (100.0, 800.0))
-st.write('Values:', values)
+     '选择一个区间（默认25-50）',
+     18.0, 60.0, (25.0, 50.0))
+st.write('你选的工作年限是:', values)
 
-st.subheader('时间范围滑动条：')
+st.subheader('你的工作时间是？：')
 
 appointment = st.slider(
-     "制定你的时间表:",
-     value=(time(11, 30), time(12, 45)))
-st.write("你指定的时间表是:", appointment)
+     "你的时间表:",
+     value=(time(6, 00), time(23, 59)))
+st.write("你自愿的工作时间表是:", appointment)
 
-st.subheader('日期滑动条')
+st.subheader('你每年打算从什么时候干到年尾')
 
 start_time = st.slider(
-     "什么时候开始?",
-     value=datetime(2023, 10, 1, 9, 30),
+     "做出你的打算?",
+     value=datetime(2023, 1, 1, 6, 30),
      format="MM/DD/YY - hh:mm")
-st.write("开始时间:", start_time)
+st.write("你的开始时间是:", start_time)
 
-st.header('画一个折线图')
+st.header('让我们来看看冶金工人的身高体重年龄')
 chart_data = {'身高cm': [150, 160, 170, 180, 190], '体重kg': [50, 55, 60, 70, 80], '年龄': [10, 12, 14, 16, 18]}
-df = pd.DataFrame(chart_data)
+# df = pd.DataFrame(chart_data)
 
 # chart_data = pd.DataFrame(
 #      np.random.randn(20, 3),
@@ -72,11 +66,12 @@ df = pd.DataFrame(chart_data)
 
 st.line_chart(chart_data)
 
-st.header('提供选择')
+
+st.header('你喜欢的怎么去上班')
 
 option = st.selectbox(
-     '你最喜欢的颜色是什么?',
-     ('Blue', 'Red', 'Green'))
+     '在以下选项中选择?',
+     ('走去', '公交车', '地铁', '打车'))
 
-st.write('你最喜欢的颜色是： ', option)
+st.write('原来你喜欢用： ', option, '这种方式去上班')
 
